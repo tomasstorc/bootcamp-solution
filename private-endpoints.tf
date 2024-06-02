@@ -1,7 +1,7 @@
 resource "azurerm_private_endpoint" "sql_pe" {
   name                = "private-endpoint-sql"
-  location            = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.bootcamp_rg.location
+  resource_group_name = azurerm_resource_group.bootcamp_rg.name
   subnet_id           = azurerm_subnet.sql_subnet.id
 
   private_service_connection {
@@ -19,8 +19,8 @@ resource "azurerm_private_endpoint" "sql_pe" {
 
 resource "azurerm_private_endpoint" "pe_kv" {
   name                = "ts-test-bootcamp-kv-pen"
-  location            = data.azurerm_resource_group.bootcamp_rg.location
-  resource_group_name = data.azurerm_resource_group.bootcamp_rg.name
+  location            = azurerm_resource_group.bootcamp_rg.location
+  resource_group_name = azurerm_resource_group.bootcamp_rg.name
   subnet_id           = azurerm_subnet.pe_subnet.id
 
   private_dns_zone_group {

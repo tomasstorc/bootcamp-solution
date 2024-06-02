@@ -15,6 +15,6 @@ resource "azurerm_mssql_database" "db" {
   name                        = "ts-test-bootcamp-db"
   server_id                   = azurerm_mssql_server.server.id
   max_size_gb                 = 4
-  auto_pause_delay_in_minutes = 15
+  auto_pause_delay_in_minutes = 60
 }
 
