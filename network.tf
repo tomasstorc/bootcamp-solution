@@ -60,7 +60,7 @@ resource "azurerm_private_dns_zone" "kv_dns" {
   
 }
 
-resource "azurerm_private_dns_zone_virtual_network_link" "vnet_link_sql" {
+resource "azurerm_private_dns_zone_virtual_network_link" "vnet_link_kv" {
   name                  = "vnet-link-kv"
   resource_group_name   = azurerm_resource_group.bootcamp_rg.name
   private_dns_zone_name = azurerm_private_dns_zone.kv_dns.id
