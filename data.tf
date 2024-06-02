@@ -2,6 +2,7 @@
 data "azurerm_client_config" "current" {}
 
 
+
 # generate random pw
 resource "random_password" "password" {
   length           = 16

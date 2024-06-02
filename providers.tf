@@ -9,10 +9,12 @@ terraform {
       source  = "hashicorp/random"
       version = "~>3.0"
     }
+
   }
 }
 provider "azurerm" {
   features {}
-  use_oidc = true
+
 }
+
 
