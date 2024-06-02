@@ -25,7 +25,7 @@ resource "azurerm_network_security_group" "nsg_rdp" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
- 
+
 }
 
 resource "azurerm_network_security_group" "nsg_psql" {
@@ -55,7 +55,7 @@ resource "azurerm_network_security_group" "nsg_psql" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
- 
+
 }
 
 resource "azurerm_subnet_network_security_group_association" "psql" {
