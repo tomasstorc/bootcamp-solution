@@ -32,6 +32,6 @@ resource "azurerm_private_endpoint" "pe_kv" {
     name                           = "ts-test-bootcamp-kv-psc"
     private_connection_resource_id = azurerm_key_vault.kv.id
     is_manual_connection           = false
-    subresource_names = ["Vault"]
+    subresource_names              = ["Vault"]
   }
 }

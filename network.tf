@@ -36,7 +36,7 @@ resource "azurerm_network_interface" "private_vm_nic" {
     name                          = "internal"
     subnet_id                     = azurerm_subnet.pe_subnet.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id = azurerm_public_ip.public_ip.id
+    public_ip_address_id          = azurerm_public_ip.public_ip.id
   }
 }
 
@@ -57,7 +57,7 @@ resource "azurerm_private_dns_zone_virtual_network_link" "vnet_link_sql" {
 resource "azurerm_private_dns_zone" "kv_dns" {
   name                = "privatelink.vaultcore.azure.net"
   resource_group_name = azurerm_resource_group.bootcamp_rg.name
-  
+
 }
 
 resource "azurerm_private_dns_zone_virtual_network_link" "vnet_link_kv" {
