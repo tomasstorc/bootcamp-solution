@@ -6,7 +6,7 @@ resource "azurerm_postgresql_flexible_server" "psql" {
   delegated_subnet_id           = azurerm_subnet.psql_subnet.id
   private_dns_zone_id           = azurerm_private_dns_zone.psql_dns.id
   public_network_access_enabled = false
-  zone                          = "1"
+  zone                          = "2"
 
   storage_mb   = 32768
   storage_tier = "P30"
