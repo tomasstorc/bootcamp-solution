@@ -2,6 +2,10 @@
 data "azurerm_client_config" "current" {}
 
 
+data "azuread_user" "myself" {
+  object_id = var.user_id
+}
+
 # generate random pw
 resource "random_password" "password" {
   length           = 16
