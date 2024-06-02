@@ -12,11 +12,20 @@ resource "azurerm_subnet" "pe_subnet" {
   address_prefixes     = ["10.0.1.0/26"]
 }
 
-resource "azurerm_subnet" "sql_subnet" {
+resource "azurerm_subnet" "psql_subnet" {
   name                 = "ts-test-bootcamp-sub2"
   resource_group_name  = azurerm_resource_group.bootcamp_rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefixes     = ["10.0.64.0/26"]
+  address_prefixes     = ["10.0.1.64/26"]
+  delegation {
+    name = "sd"
+    service_delegation {
+      name = "Microsoft.DBforPostgreSQL/flexibleServers"
+      actions = [
+        "Microsoft.Network/virtualNetworks/subnets/join/action",
+      ]
+    }
+  }
 
 }
 
@@ -52,5 +61,18 @@ resource "azurerm_private_dns_zone_virtual_network_link" "vnet_link_kv" {
   resource_group_name   = azurerm_resource_group.bootcamp_rg.name
   private_dns_zone_name = azurerm_private_dns_zone.kv_dns.id
   virtual_network_id    = azurerm_virtual_network.vnet.id
+}
+
+resource "azurerm_private_dns_zone" "psql_dns" {
+  name                = "example.postgres.database.azure.com"
+  resource_group_name = azurerm_resource_group.bootcamp_rg.name
+}
+
+resource "azurerm_private_dns_zone_virtual_network_link" "vnet_link_psql" {
+  name                  = "vnet-link-psql"
+  private_dns_zone_name = azurerm_private_dns_zone.psql_dns.name
+  virtual_network_id    = azurerm_virtual_network.vnet.id
+  resource_group_name   = azurerm_resource_group.bootcamp_rg.name
+
 }
 
