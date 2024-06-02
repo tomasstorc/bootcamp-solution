@@ -27,7 +27,7 @@ resource "azurerm_windows_virtual_machine" "win_vm" {
 
 resource "azurerm_virtual_machine_extension" "aad_login" {
   name                       = "vmext-AADLoginForWindows"
-  virtual_machine_id         = azurerm_windows_virtual_machine.example.id
+  virtual_machine_id         = azurerm_windows_virtual_machine.win_vm.id
   publisher                  = "Microsoft.Azure.ActiveDirectory"
   type                       = "AADLoginForWindows"
   type_handler_version       = "1.0"
