@@ -58,12 +58,12 @@ resource "azurerm_network_security_group" "nsg_psql" {
  
 }
 
-resource "azurerm_subnet_network_security_group_association" "example" {
+resource "azurerm_subnet_network_security_group_association" "psql" {
   subnet_id                 = azurerm_subnet.psql_subnet.id
   network_security_group_id = azurerm_network_security_group.nsg_psql.id
 }
 
-resource "azurerm_subnet_network_security_group_association" "example" {
+resource "azurerm_subnet_network_security_group_association" "rdp" {
   subnet_id                 = azurerm_subnet.pe_subnet
   network_security_group_id = azurerm_network_security_group.nsg_rdp.id
 }
