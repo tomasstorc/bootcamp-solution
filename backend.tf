@@ -1,13 +1,10 @@
 terraform {
   backend "azurerm" {
-    resource_group_name  = "StorageAccount-ResourceGroup"          
-    storage_account_name = "abcd1234"                              
+    resource_group_name  = "terraform-rg"          
+    storage_account_name = "tstestterraformstatesa"                              
     container_name       = "tfstate"                               
-    key                  = "prod.terraform.tfstate"                
+    key                  = "terraform.tfstate"                
     use_oidc             = true                                    
-    client_id            = "00000000-0000-0000-0000-000000000000"  
-    subscription_id      = "00000000-0000-0000-0000-000000000000"  
-    tenant_id            = "00000000-0000-0000-0000-000000000000"  
-    use_azuread_auth     = true                                    
+                             
   }
 }
