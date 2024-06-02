@@ -64,6 +64,6 @@ resource "azurerm_subnet_network_security_group_association" "psql" {
 }
 
 resource "azurerm_subnet_network_security_group_association" "rdp" {
-  subnet_id                 = azurerm_subnet.pe_subnet
+  subnet_id                 = azurerm_subnet.pe_subnet.id
   network_security_group_id = azurerm_network_security_group.nsg_rdp.id
 }
