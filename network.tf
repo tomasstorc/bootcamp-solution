@@ -40,19 +40,6 @@ resource "azurerm_network_interface" "private_vm_nic" {
   }
 }
 
-# Create private DNS zone
-resource "azurerm_private_dns_zone" "sql_dns" {
-  name                = "privatelink.database.windows.net"
-  resource_group_name = azurerm_resource_group.bootcamp_rg.name
-}
-
-# Create virtual network link
-resource "azurerm_private_dns_zone_virtual_network_link" "vnet_link_sql" {
-  name                  = "vnet-link-dns"
-  resource_group_name   = azurerm_resource_group.bootcamp_rg.name
-  private_dns_zone_name = azurerm_private_dns_zone.sql_dns.id
-  virtual_network_id    = azurerm_virtual_network.vnet.id
-}
 
 resource "azurerm_private_dns_zone" "kv_dns" {
   name                = "privatelink.vaultcore.azure.net"
