@@ -5,7 +5,7 @@ resource "azurerm_mssql_server" "server" {
   version             = "12.0"
   azuread_administrator {
     login_username              = "sqladmin"
-    object_id                   = data.azuread_user.myself.object_id
+    object_id                   = var.user_id
     azuread_authentication_only = true
   }
 }

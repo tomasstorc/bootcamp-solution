@@ -9,6 +9,6 @@ resource "azurerm_role_assignment" "kv_rbac" {
 resource "azurerm_role_assignment" "vm_rbac" {
   scope                = azurerm_windows_virtual_machine.win_vm.id
   role_definition_name = "Virtual Machine Administrator Login"
-  principal_id         = data.azuread_user.myself.object_id
+  principal_id         = var.user_id
 }
 

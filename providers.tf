@@ -9,16 +9,9 @@ terraform {
       source  = "hashicorp/random"
       version = "~>3.0"
     }
-    azuread = {
-      source  = "hashicorp/azuread"
-      version = "2.7.0"
-    }
   }
 }
 provider "azurerm" {
   features {}
 }
 
-provider "azuread" {
-  tenant_id = "aab42d5d-4562-494a-b286-5b0f040addaa"
-}
