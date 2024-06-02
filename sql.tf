@@ -19,12 +19,3 @@ resource "azurerm_postgresql_flexible_server" "psql" {
   }
 
 }
-
-resource "azurerm_postgresql_flexible_server_active_directory_administrator" "psql_aad_auth" {
-  server_name         = azurerm_postgresql_flexible_server.psql.name
-  resource_group_name = azurerm_resource_group.bootcamp_rg.name
-  tenant_id           = data.azurerm_client_config.current.tenant_id
-  object_id           = data.azuread_user.myself.object_id
-  principal_name      = data.azuread_user.myself.user_principal_name
-  principal_type      = "User"
-}
