@@ -18,10 +18,3 @@ resource "azurerm_mssql_database" "db" {
   auto_pause_delay_in_minutes = 15
 }
 
-resource "azurerm_sql_active_directory_administrator" "example" {
-  server_name         = azurerm_sql_server
-  resource_group_name = azurerm_resource_group.example.name
-  login               = "sqladmin"
-  tenant_id           = data.azurerm_client_config.current.tenant_id
-  object_id           = data.azurerm_client_config.current.object_id
-}
