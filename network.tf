@@ -9,14 +9,14 @@ resource "azurerm_subnet" "pe_subnet" {
   name                 = "ts-test-bootcamp-sub1"
   resource_group_name  = azurerm_resource_group.bootcamp_rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefixes     = ["10.0.1.0/26"]
+  address_prefixes     = ["10.0.0.0/26"]
 }
 
 resource "azurerm_subnet" "psql_subnet" {
   name                 = "ts-test-bootcamp-sub2"
   resource_group_name  = azurerm_resource_group.bootcamp_rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
-  address_prefixes     = ["10.0.1.64/26"]
+  address_prefixes     = ["10.0.0.64/26"]
   delegation {
     name = "sd"
     service_delegation {
