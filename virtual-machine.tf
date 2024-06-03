@@ -6,7 +6,7 @@ resource "azurerm_windows_virtual_machine" "win_vm" {
   admin_username      = "tomasstorc"
   admin_password      = random_password.password.result
   network_interface_ids = [
-    azurerm_network_interface.private_vm_nic.id,
+    azurerm_network_interface.private_vm_nic.id
   ]
   identity {
     type = "SystemAssigned"
