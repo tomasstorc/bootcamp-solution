@@ -1,5 +1,5 @@
 resource "azurerm_key_vault" "kv" {
-  name                          = "ts-test-bootcamp-kv2"
+  name                          = "ts-test-bootcamp-kv3"
   location                      = azurerm_resource_group.bootcamp_rg.location
   resource_group_name           = azurerm_resource_group.bootcamp_rg.name
   tenant_id                     = data.azurerm_client_config.current.tenant_id
