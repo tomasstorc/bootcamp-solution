@@ -12,7 +12,7 @@ resource "azurerm_private_dns_zone_virtual_network_link" "vnet_link_kv" {
 }
 
 resource "azurerm_private_dns_zone" "psql_dns" {
-  name                = "privatelink.postgres.database.azure.com"
+  name                = "privatelink.postgres.database.azure.net"
   resource_group_name = azurerm_resource_group.bootcamp_rg.name
 }
 
