@@ -19,3 +19,13 @@ resource "azurerm_postgresql_flexible_server" "psql" {
   }
   tags = var.tags
 }
+
+
+resource "azurerm_postgresql_flexible_server_active_directory_administrator" "entra_admin" {
+  server_name         = azurerm_postgresql_flexible_server.psql.name
+  resource_group_name = azurerm_resource_group.bootcamp_rg.name
+  tenant_id           = data.azurerm_client_config.current.tenant_id
+  object_id           = var.user_id
+  principal_name      = var.user_name
+  principal_type      = "User"
+}
