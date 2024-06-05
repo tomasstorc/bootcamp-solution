@@ -41,12 +41,12 @@ resource "azurerm_virtual_machine_extension" "da" {
   auto_upgrade_minor_version = true
   automatic_upgrade_enabled  = true
   publisher                  = "Microsoft.Azure.Monitoring.DependencyAgent"
-  settings                   = jsonencode(
-{
-  "enableAMA" = "true"
-}
+  settings = jsonencode(
+    {
+      "enableAMA" = "true"
+    }
   )
-  type                       = "DependencyAgentWindows"
-  type_handler_version       = "9.10"
-  virtual_machine_id         = azurerm_windows_virtual_machine.win_vm.id
+  type                 = "DependencyAgentWindows"
+  type_handler_version = "9.10"
+  virtual_machine_id   = azurerm_windows_virtual_machine.win_vm.id
 }
