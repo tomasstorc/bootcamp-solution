@@ -4,5 +4,5 @@ resource "azurerm_log_analytics_workspace" "law" {
   resource_group_name = azurerm_resource_group.bootcamp_rg.name
   sku                 = "PerGB2018"
   retention_in_days   = 30
-  tags = var.tags
+  tags                = var.tags
 }

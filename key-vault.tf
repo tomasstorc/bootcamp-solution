@@ -8,6 +8,6 @@ resource "azurerm_key_vault" "kv" {
   sku_name                      = "standard"
   enable_rbac_authorization     = true
   public_network_access_enabled = false
-  tags = var.tags
+  tags                          = var.tags
 }
 

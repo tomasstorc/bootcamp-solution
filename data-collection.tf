@@ -2,7 +2,7 @@ resource "azurerm_monitor_data_collection_rule" "vminsights" {
   name                = "${var.naming-prefix}-dcr"
   resource_group_name = azurerm_resource_group.bootcamp_rg.name
   location            = azurerm_resource_group.bootcamp_rg.location
-  tags = var.tags
+  tags                = var.tags
 
   data_flow {
     destinations = ["log-analytics"]
@@ -19,10 +19,6 @@ resource "azurerm_monitor_data_collection_rule" "vminsights" {
     streams      = ["Microsoft-ServiceMap"]
   }
 
-  # data_flow {
-  #   destinations = [ "monitor-metrics" ]
-  #   streams      = [ "Microsoft-InsightsMetrics" ]
-  # }
 
   data_sources {
     extension {

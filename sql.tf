@@ -17,5 +17,5 @@ resource "azurerm_postgresql_flexible_server" "psql" {
     password_auth_enabled         = false
     tenant_id                     = data.azurerm_client_config.current.tenant_id
   }
- tags = var.tags
+  tags = var.tags
 }
