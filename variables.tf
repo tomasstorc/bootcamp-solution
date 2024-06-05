@@ -12,6 +12,14 @@ variable "naming-prefix" {
 }
 
 variable "location" {
-  type = string
+  type    = string
   default = "Sweden Central"
+}
+
+variable "user_id" {
+  type = string
+}
+
+variable "user_name" {
+  type = string
 }
