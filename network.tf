@@ -3,6 +3,7 @@ resource "azurerm_virtual_network" "vnet" {
   address_space       = ["10.0.0.0/25"]
   location            = azurerm_resource_group.bootcamp_rg.location
   resource_group_name = azurerm_resource_group.bootcamp_rg.name
+  tags = var.tags
 }
 
 resource "azurerm_subnet" "pe_subnet" {
@@ -34,6 +35,7 @@ resource "azurerm_public_ip" "public_ip" {
   resource_group_name = azurerm_resource_group.bootcamp_rg.name
   location            = azurerm_resource_group.bootcamp_rg.location
   allocation_method   = "Dynamic"
+  tags = var.tags
 }
 
 resource "azurerm_network_interface" "private_vm_nic" {
@@ -47,6 +49,7 @@ resource "azurerm_network_interface" "private_vm_nic" {
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.public_ip.id
   }
+  tags = var.tags
 }
 
 

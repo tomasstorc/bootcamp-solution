@@ -17,4 +17,5 @@ resource "azurerm_private_endpoint" "pe_kv" {
     is_manual_connection           = false
     subresource_names              = ["Vault"]
   }
+  tags = var.tags
 }

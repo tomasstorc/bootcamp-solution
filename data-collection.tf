@@ -2,6 +2,7 @@ resource "azurerm_monitor_data_collection_rule" "vminsights" {
   name                = "ts-test-bootcamp-dcr"
   resource_group_name = azurerm_resource_group.bootcamp_rg.name
   location            = azurerm_resource_group.bootcamp_rg.location
+  tags = var.tags
 
   data_flow {
     destinations = ["log-analytics"]

@@ -1,3 +1,7 @@
-variable "user_id" {
-  type = string
+variable "tags" {
+  type = map(string)
+  default = {
+    "owner" = "storctom"
+    "terraform" = "true"
+  }
 }
