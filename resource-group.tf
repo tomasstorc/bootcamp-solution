@@ -1,5 +1,5 @@
 resource "azurerm_resource_group" "bootcamp_rg" {
-  name     = "ts-test-bootcamp-rg"
+  name     = "${var.naming-prefix}-rg"
   location = "Sweden Central"
   tags = var.tags
 }

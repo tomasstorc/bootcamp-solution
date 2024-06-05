@@ -1,5 +1,5 @@
 resource "azurerm_virtual_network" "vnet" {
-  name                = "ts-test-bootcamp-vnet"
+  name                = "${var.naming-prefix}-vnet"
   address_space       = ["10.0.0.0/25"]
   location            = azurerm_resource_group.bootcamp_rg.location
   resource_group_name = azurerm_resource_group.bootcamp_rg.name
@@ -7,14 +7,14 @@ resource "azurerm_virtual_network" "vnet" {
 }
 
 resource "azurerm_subnet" "pe_subnet" {
-  name                 = "ts-test-bootcamp-sub1"
+  name                 = "${var.naming-prefix}-sub1"
   resource_group_name  = azurerm_resource_group.bootcamp_rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["10.0.0.0/26"]
 }
 
 resource "azurerm_subnet" "psql_subnet" {
-  name                 = "ts-test-bootcamp-sub2"
+  name                 = "${var.naming-prefix}-sub2"
   resource_group_name  = azurerm_resource_group.bootcamp_rg.name
   virtual_network_name = azurerm_virtual_network.vnet.name
   address_prefixes     = ["10.0.0.64/26"]
@@ -31,7 +31,7 @@ resource "azurerm_subnet" "psql_subnet" {
 }
 
 resource "azurerm_public_ip" "public_ip" {
-  name                = "ts-test-bootcamp-pip"
+  name                = "${var.naming-prefix}-pip"
   resource_group_name = azurerm_resource_group.bootcamp_rg.name
   location            = azurerm_resource_group.bootcamp_rg.location
   allocation_method   = "Dynamic"
@@ -39,7 +39,7 @@ resource "azurerm_public_ip" "public_ip" {
 }
 
 resource "azurerm_network_interface" "private_vm_nic" {
-  name                = "ts-test-bootcamp-nic"
+  name                = "${var.naming-prefix}-nic"
   location            = azurerm_resource_group.bootcamp_rg.location
   resource_group_name = azurerm_resource_group.bootcamp_rg.name
 

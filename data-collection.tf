@@ -1,5 +1,5 @@
 resource "azurerm_monitor_data_collection_rule" "vminsights" {
-  name                = "ts-test-bootcamp-dcr"
+  name                = "${var.naming-prefix}-dcr"
   resource_group_name = azurerm_resource_group.bootcamp_rg.name
   location            = azurerm_resource_group.bootcamp_rg.location
   tags = var.tags
@@ -60,7 +60,7 @@ resource "azurerm_monitor_data_collection_rule" "vminsights" {
 }
 
 resource "azurerm_monitor_data_collection_rule_association" "vminsights" {
-  name                    = "ts-test-bootcamp-dcra"
+  name                    = "${var.naming-prefix}-dcra"
   data_collection_rule_id = azurerm_monitor_data_collection_rule.vminsights.id
   description             = "Monitor VM"
   target_resource_id      = azurerm_windows_virtual_machine.win_vm.id

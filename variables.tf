@@ -5,3 +5,8 @@ variable "tags" {
     "terraform" = "true"
   }
 }
+
+variable "naming-prefix" {
+  type = string
+  default = "ts-test-bootcamp"
+}

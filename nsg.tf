@@ -1,5 +1,5 @@
 resource "azurerm_network_security_group" "nsg_rdp" {
-  name                = "ts-test-bootcamp-nsg1"
+  name                = "${var.naming-prefix}-nsg1"
   location            = azurerm_resource_group.bootcamp_rg.location
   resource_group_name = azurerm_resource_group.bootcamp_rg.name
 

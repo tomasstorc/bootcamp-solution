@@ -23,6 +23,7 @@ resource "azurerm_windows_virtual_machine" "win_vm" {
     sku       = "2022-Datacenter"
     version   = "latest"
   }
+  tags = var.tags
 }
 
 

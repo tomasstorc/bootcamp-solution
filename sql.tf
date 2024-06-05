@@ -1,5 +1,5 @@
 resource "azurerm_postgresql_flexible_server" "psql" {
-  name                          = "ts-test-bootcamp-psql"
+  name                          = "${var.naming-prefix}-psql"
   resource_group_name           = azurerm_resource_group.bootcamp_rg.name
   location                      = azurerm_resource_group.bootcamp_rg.location
   version                       = "14"
