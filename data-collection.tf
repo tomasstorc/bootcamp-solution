@@ -57,3 +57,10 @@ resource "azurerm_monitor_data_collection_rule" "vminsights" {
     }
   }
 }
+
+resource "azurerm_monitor_data_collection_rule_association" "vminsights" {
+  name                    = "ts-test-bootcamp-dcra"
+  data_collection_rule_id = azurerm_monitor_data_collection_rule.vminsights.id
+  description             = "Monitor VM"
+  target_resource_id      = azurerm_windows_virtual_machine.win_vm.id
+}
