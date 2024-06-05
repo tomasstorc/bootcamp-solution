@@ -5,10 +5,3 @@ resource "azurerm_role_assignment" "kv_rbac" {
   principal_id         = azurerm_windows_virtual_machine.win_vm.identity[0].principal_id
 }
 
-#give yourself ad access to vm
-resource "azurerm_role_assignment" "vm_rbac" {
-  scope                = azurerm_windows_virtual_machine.win_vm.id
-  role_definition_name = "Virtual Machine Administrator Login"
-  principal_id         = var.user_id
-}
-
