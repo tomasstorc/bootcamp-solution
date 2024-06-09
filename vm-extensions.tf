@@ -27,7 +27,7 @@ resource "azurerm_virtual_machine_extension" "CSE" {
   name                 = "CustomScriptExtensions"
   virtual_machine_id   = azurerm_windows_virtual_machine.win_vm.id
   publisher            = "Microsoft.Compute"
-  type                 = "CCustomScriptExtension"
+  type                 = "CustomScriptExtension"
   type_handler_version = "2.0"
 
   settings = <<SETTINGS
