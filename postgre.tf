@@ -11,7 +11,7 @@ resource "azurerm_postgresql_flexible_server" "psql" {
   storage_mb   = 32768
   storage_tier = "P30"
 
-  sku_name = "GP_Standard_D4s_v3"
+  sku_name = "B_Standard_B1ms"
   authentication {
     active_directory_auth_enabled = true
     password_auth_enabled         = false
