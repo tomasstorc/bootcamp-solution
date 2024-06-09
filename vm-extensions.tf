@@ -32,7 +32,7 @@ resource "azurerm_virtual_machine_extension" "CSE" {
 
   settings = <<SETTINGS
  {
-  "fileUris": [var.script_uri],
+  "fileUris": ["test"],
   "commandToExecute": "powershell.exe installPython.ps1"
  }
 SETTINGS
