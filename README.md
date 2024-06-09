@@ -25,7 +25,7 @@
   $${log_2 35} = 32 - x$$
   $$x = 32 - {log_2 35}$$
   $$x = 32 - 5.129283$$
-  $$ x ≈ 26.780$$
+  $$x ≈ 26.780$$
 - As subnet mask needs to be whole number we get 26. While this works it is better to use substitution method. With 27 mask we get 27 assigneable addresses so we need /26 mask for each subnet. That is why otal address space will be /25.
 - One of the subnets should be delegated to PostgreSQL Flexible server.
 
@@ -84,7 +84,13 @@
 - Download `main.py` and `requirements.txt` to your computer
 - Connect via RDP ti Windows VM that you have created.
 - Copy downloaded files into VM
-- Install Python inside VM
+- Install Python inside VM, this can be done via powershell as follows:
+
+```powershell
+Invoke-WebRequest -Uri "https://www.python.org/ftp/python/3.12.4/python-3.12.4-amd64.exe" -OutFile "c:/temp/python-3.12.4-amd64.exe"
+c:/temp/python-3.12.4-amd64.exe /quiet InstallAllUsers=0 InstallLauncherAllUsers=0 PrependPath=1 Include_test=0
+```
+
 - Ensure Python is installed and added to the system PATH by running `python`
 - As script needs to environment variables set them the way you want, here is powershell example:
 
