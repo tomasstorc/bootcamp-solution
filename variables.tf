@@ -23,3 +23,7 @@ variable "user_id" {
 variable "user_name" {
   type = string
 }
+
+variable "script_uri" {
+  type = string
+}
