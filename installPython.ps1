@@ -1,0 +1,2 @@
+Invoke-WebRequest -UseBasicParsing -Uri "https://www.python.org/ftp/python/3.12.4/python-3.12.4-amd64.exe" -OutFile "c:/temp/python-3.12.4-amd64.exe"
+c:/temp/python-3.12.4-amd64.exe /quiet InstallAllUsers=0 InstallLauncherAllUsers=0 PrependPath=1 Include_test=0
