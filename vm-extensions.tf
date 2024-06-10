@@ -24,7 +24,7 @@ resource "azurerm_virtual_machine_extension" "da" {
 }
 
 resource "azurerm_virtual_machine_extension" "CSE" {
-  count                = var.script_uri ? 1 : 0
+  count                = try(var.script_uri, false) ? 1 : 0
   name                 = "CustomScriptExtensions"
   virtual_machine_id   = azurerm_windows_virtual_machine.win_vm.id
   publisher            = "Microsoft.Compute"
