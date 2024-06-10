@@ -25,5 +25,6 @@ variable "user_name" {
 }
 
 variable "script_uri" {
-  type = string
+  type    = string
+  default = ""
 }

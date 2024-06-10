@@ -24,6 +24,7 @@ resource "azurerm_virtual_machine_extension" "da" {
 }
 
 resource "azurerm_virtual_machine_extension" "CSE" {
+  for_each             = var.script_uri != "" ? [1] : []
   name                 = "CustomScriptExtensions"
   virtual_machine_id   = azurerm_windows_virtual_machine.win_vm.id
   publisher            = "Microsoft.Compute"
